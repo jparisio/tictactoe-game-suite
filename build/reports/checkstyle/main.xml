@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.45.1">
+<file name="/course/A3/src/main/java/boardgame/Board.java">
+</file>
+<file name="/course/A3/src/main/java/boardgame/Saveable.java">
+</file>
+<file name="/course/A3/src/main/java/boardgame/numericalTicTacToe/NumericalBoard.java">
+</file>
+<file name="/course/A3/src/main/java/boardgame/numericalTicTacToe/NumericalGame.java">
+</file>
+<file name="/course/A3/src/main/java/boardgame/numericalTicTacToe/NumericalUI.java">
+</file>
+<file name="/course/A3/src/main/java/boardgame/tictactoe/TicTacToeBoard.java">
+</file>
+<file name="/course/A3/src/main/java/boardgame/tictactoe/TicTacToeGame.java">
+</file>
+<file name="/course/A3/src/main/java/boardgame/tictactoe/TicTacToeUI.java">
+</file>
+<file name="/course/A3/src/main/java/boardgame/ui/GameView.java">
+</file>
+<file name="/course/A3/src/main/java/boardgame/ui/PlayerProfile.java">
+</file>
+</checkstyle>
