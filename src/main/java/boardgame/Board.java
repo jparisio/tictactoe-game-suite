@@ -26,5 +26,5 @@ String returnTurnChar();
 
 void lineSplitter(String line);
 
-boolean canPlay(int i);
+boolean canPlay(int i, boolean b);
 }

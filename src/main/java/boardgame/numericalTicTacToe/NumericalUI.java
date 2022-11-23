@@ -223,7 +223,7 @@ public int getInput(boolean b){
     if(repeat){
         int num = -1;
         try{
-          while((!board.canPlay(num)||!isEven(num))){
+          while((!board.canPlay(num, repeat)||!isEven(num))){
             num = Integer.parseInt(JOptionPane.showInputDialog(
                 "Input EVEN number\nbetween 0-9\nnumber must not already be used")); // get new user input
           }
@@ -235,7 +235,7 @@ public int getInput(boolean b){
 
         int num = -2;
         try{
-          while(!board.canPlay(num)||isEven(num)){
+          while(!board.canPlay(num, repeat)||isEven(num)){
             num = Integer.parseInt(JOptionPane.showInputDialog(
                 "Input ODD number\n between 0-9\nnumber must not already be used")); // get new user input
           }

@@ -209,11 +209,18 @@ public class NumericalBoard implements boardgame.Saveable, boardgame.Board{
      * @returns true or false
      */
     @Override
-    public boolean canPlay(int i){
+    public boolean canPlay(int i, boolean b){
         for(int j = 0; j < numList.size(); j++){
-            if(numList.get(j)==i){
-                numList.remove(j);
-                return true;
+            if(b){
+                if(numList.get(j)==i&&(i%2==0)){
+                    numList.remove(j);
+                    return true;
+                }
+            } else{
+                if(numList.get(j)==i&&(i%2!=0)){
+                    numList.remove(j);
+                    return true;
+                }
             }
         }
         return false;

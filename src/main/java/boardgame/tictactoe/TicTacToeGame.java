@@ -85,7 +85,7 @@ public class TicTacToeGame {
             System.out.println(game.getTurn(turn)+"'s turn\n");
             board.printBoard();
             int newNum = game.getInput();
-            if(board.canPlay(newNum)){
+            if(board.canPlay(newNum, turn)){
                 board.setBoardIndex(newNum, turnChar);
                 turnCounter+=1;
             } else {

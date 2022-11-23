@@ -208,7 +208,7 @@ public void lineSplitter(String line){
  * @returns true or false
  */
 @Override
-public boolean canPlay(int i){
+public boolean canPlay(int i, boolean b){
     if(returnBoardIndex(i)==""){
         return true;
     }

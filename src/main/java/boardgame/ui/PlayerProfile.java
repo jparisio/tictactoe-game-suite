@@ -12,6 +12,11 @@ public class PlayerProfile {
     private int xWins = 0;
     private int oWins = 0;
     private String[] splitString = new String[3];
+
+
+    public PlayerProfile(){
+       
+    }
     
     /**
      * increments the games played by 1 
