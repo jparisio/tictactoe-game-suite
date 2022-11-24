@@ -23,8 +23,11 @@ gradle build
 gradle run
 ```
 ```
+to run GUI:
 java -jar build/libs/A3.jar
 ```
+to run cmd line game:
+java -cp build/classes/java/main boardgame.tictactoe.TicTacToeGame 
 
 
 ## Limitations
