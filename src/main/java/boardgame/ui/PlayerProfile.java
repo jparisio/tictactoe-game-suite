@@ -15,7 +15,7 @@ public class PlayerProfile {
 
 
     public PlayerProfile(){
-       
+       loadProfileFromCsv("playerProfile.csv");
     }
     
     /**
@@ -91,8 +91,8 @@ public class PlayerProfile {
     /**
      * loads player profile from csv file
      */
-    public void loadProfileFromCsv(){
-        File file = new File("playerProfile.csv");
+    public void loadProfileFromCsv(String filePath){
+        File file = new File(filePath);
         String toParse = "";
         try {
           Scanner sc = new Scanner(file);

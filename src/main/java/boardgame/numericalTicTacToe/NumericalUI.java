@@ -5,7 +5,6 @@ import boardgame.ui.PlayerProfile;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-// import javax.swing.filechooser.*;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;

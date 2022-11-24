@@ -3,9 +3,12 @@ package boardgame.ui;
 import javax.swing.SwingConstants;
 import boardgame.numericalTicTacToe.NumericalUI;
 import boardgame.tictactoe.TicTacToeUI;
+
+import java.io.File;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,6 +16,8 @@ import java.awt.GridLayout;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+
 
 
 public class GameView extends JFrame implements ActionListener {
@@ -32,7 +37,7 @@ public class GameView extends JFrame implements ActionListener {
         this.add(mainMenu());
         this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
         this.setVisible(true);
-        profile.loadProfileFromCsv();
+        // profile.loadProfileFromCsv();
     }
 
    /**
@@ -75,21 +80,19 @@ public class GameView extends JFrame implements ActionListener {
     */
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand() == "TicTacToe"){
-            panel.removeAll();
-            panel.repaint();
-            panel.revalidate();
-            panel.setLayout(new GridLayout(2,1));
-            panel.add(ticTacToeGame.gameBoardAssembler());
-            panel.repaint();
-            panel.revalidate();
+            setUpTicTacToe();
         } else if(e.getActionCommand() == "<html>Numerical\n<br />TicTacToe</html>"){
-            panel.removeAll();
-            panel.repaint();panel.revalidate();
-            panel.setLayout(new GridLayout(2,1));
-            panel.add(numGame.gameBoardAssembler());
-            panel.repaint();
-            panel.revalidate();
+            setUpNumTacToe();
         } else if(e.getActionCommand() == "<html>Player\n<br />Profile</html>"){
+            JOptionPane.showMessageDialog(null, 
+            "Please select file called playerProfile.csv\n navigate to A3->playerProfile.csv");
+            JFileChooser fileChooser = new JFileChooser();
+            int response = fileChooser.showOpenDialog(null);
+            if(response == fileChooser.APPROVE_OPTION){
+                File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
+                String fileString = file.toString();
+                profile.loadProfileFromCsv(fileString);
+            }
             int option = JOptionPane.showConfirmDialog(null,
             "Games played: "+profile.returnGamesPlayed()+"\nPlayer X/Even wins: "+profile.returnXWins()
             +"\nPlayer O/Odd wins: "+profile.returnOWins()+"\n\nReset lifetime profile?","Confirm",
@@ -103,6 +106,32 @@ public class GameView extends JFrame implements ActionListener {
             }
         }
     }
+
+    /**
+     * clears panel and sets up the tictactoe game
+     */
+    public void setUpTicTacToe(){
+        panel.removeAll();
+        panel.repaint();
+        panel.revalidate();
+        panel.setLayout(new GridLayout(2,1));
+        panel.add(ticTacToeGame.gameBoardAssembler());
+        panel.repaint();
+        panel.revalidate();
+    }
+
+    /**
+     * clears panel and sets up Numerical tictactoe game
+     */
+    public void setUpNumTacToe(){
+        panel.removeAll();
+        panel.repaint();panel.revalidate();
+        panel.setLayout(new GridLayout(2,1));
+        panel.add(numGame.gameBoardAssembler());
+        panel.repaint();
+        panel.revalidate();
+    }
+
 
 
 public static void main(String[] args) {

@@ -6,7 +6,6 @@ import java.awt.GridLayout;
 import java.awt.Font;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-// import javax.swing.filechooser.*;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
@@ -195,6 +194,7 @@ private PlayerProfile profile = new PlayerProfile();
     public void tie(){
         int option1 = JOptionPane.showConfirmDialog(null, 
         "Tie Game\nPlay Again?", "title",JOptionPane.YES_NO_OPTION);
+        profile.gamePlayedIncrementor();
         if(option1 == JOptionPane.YES_OPTION){
             resetGame();
         } else{
